@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv*/
+_blender_mcp_official/
+outputs/
+reports/qa_render/
+.DS_Store
+Thumbs.db

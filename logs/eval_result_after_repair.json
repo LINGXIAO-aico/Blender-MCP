@@ -1,0 +1,13 @@
+{
+  "total_score": 90,
+  "geometry_score": 17,
+  "layout_score": 19,
+  "material_score": 13,
+  "lighting_score": 13,
+  "camera_score": 14,
+  "alignment_score": 14,
+  "overall_quality_level": "excellent",
+  "detected_issues": [],
+  "repair_suggestions": [],
+  "summary": "The repaired scene now shows a white ceramic cup resting on the wooden table under clear area lighting, with the cup and table well framed in the camera view."
+}

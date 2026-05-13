@@ -1,0 +1,63 @@
+{
+  "total_score": 42,
+  "geometry_score": 15,
+  "layout_score": 5,
+  "material_score": 4,
+  "lighting_score": 4,
+  "camera_score": 5,
+  "alignment_score": 9,
+  "overall_quality_level": "poor",
+  "detected_issues": [
+    {
+      "type": "floating_object",
+      "severity": "high",
+      "object": "ceramic_cup",
+      "view_evidence": "front, side, camera",
+      "description": "The cup is visibly suspended above the wooden tabletop. Metadata confirms the cup bottom is at Z=1.145 while the tabletop top is at Z=0.800."
+    },
+    {
+      "type": "underexposed",
+      "severity": "high",
+      "object": "whole_scene",
+      "view_evidence": "camera, front, side, top, back",
+      "description": "All rendered views are very dark and the scene lacks balanced studio illumination. Metadata shows the area light energy is only 18.0 and color management exposure is -1.2."
+    },
+    {
+      "type": "missing_material",
+      "severity": "medium",
+      "object": "ceramic_cup",
+      "view_evidence": "camera, top",
+      "description": "The cup appears as a plain gray/default material rather than a ceramic surface. Metadata lists the material as default_gray_cup_material."
+    },
+    {
+      "type": "camera_bad_framing",
+      "severity": "high",
+      "object": "ceramic_cup",
+      "view_evidence": "camera",
+      "description": "The main subject is not well centered in the camera view, with the cup and table shifted toward the lower-left area and large unused dark space dominating the frame."
+    }
+  ],
+  "repair_suggestions": [
+    {
+      "target_issue": "floating_object",
+      "suggested_action": "Move ceramic_cup and ceramic_cup_handle downward until the cup bottom bounding box aligns with the wooden_table top surface.",
+      "expected_effect": "The cup will physically rest on the table instead of floating."
+    },
+    {
+      "target_issue": "underexposed",
+      "suggested_action": "Increase area_key_light energy, keep it as an area light, and reset color management exposure closer to 0.",
+      "expected_effect": "The cup and table will become clearly visible under balanced studio lighting."
+    },
+    {
+      "target_issue": "missing_material",
+      "suggested_action": "Assign a white ceramic material with moderate roughness and subtle specular reflection to ceramic_cup and ceramic_cup_handle.",
+      "expected_effect": "The cup will read visually as ceramic instead of default gray."
+    },
+    {
+      "target_issue": "camera_bad_framing",
+      "suggested_action": "Move and rotate the Camera to frame both the cup and table near the center of the image.",
+      "expected_effect": "The cup will be clearly visible in the camera view and the composition will match the target description."
+    }
+  ],
+  "summary": "The scene contains the intended major defects: the cup is floating, lighting is severely underexposed, the cup material is default gray rather than ceramic, and the camera composition is poorly framed."
+}
